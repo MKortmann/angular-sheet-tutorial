@@ -1,0 +1,9 @@
+
+dist
+coverage
+node_modules
+.github
+package-lock.json
+.config
+.angular
+.vscode

@@ -1,0 +1,59 @@
+<div class="container">
+  <!-- interpolation {{}} example:  -->
+  <!-- Double curly braces are used in the template to display data from the template's component class -->
+  <p>{{ title }}</p>
+  <!-- interpolation can be used to resolve expressions -->
+  <p>{{ 10 - 2 }}</p>
+  <!-- we can also call a method here using interpolation -->
+  <p>{{ solveExpression() }}</p>
+
+  Flag is {{ flag }}
+  <div *ngIf="flag">Flag is {{ flag }}</div>
+
+  <div *ngFor="let item of array">
+    <ul>
+      <li>{{ item }}</li>
+    </ul>
+  </div>
+
+  <ul>
+    <li *ngFor="let item of array">{{ item }}</li>
+  </ul>
+
+  <br />
+
+  <div [ngStyle]="{ color: flag ? 'red' : 'blue' }">text color</div>
+
+  <!-- brackets: as input: binding property from component.ts to template.html -->
+  <div [ngClass]="{ withStyle: flag, noStyle: !flag }">text color class!!!</div>
+  <!-- [(brackets and parentheses)]: binding data in both ways component.ts <=> template.html -->
+  <input [(ngModel)]="userInput" placeholder="Enter text here" />
+  <p>You entered: {{ userInput }}</p>
+
+  <!-- parentheses as output/event -->
+  <!-- event binding: click -->
+  <button class="btn btn-primary" (click)="handleClick()">Click</button>
+  <p>Number: {{ number }}</p>
+
+  <!-- Use from Pipes -->
+  <p>{{ title | uppercase }}</p>
+  <p>{{ currentDate }}</p>
+  <p>{{ currentDate | date : 'dd/MM/yyyy' }}</p>
+  <p>{{ currentDate | date : 'shortDate' }}</p>
+  <p>{{ currentDate | date : 'longDate' }}</p>
+  <p>{{ currentDate | date : 'fullDate' }}</p>
+  <p>{{ 1 | percent }}</p>
+  <p>{{ 0.5 | percent }}</p>
+
+  <!-- Info: https://angular.io/guide/inputs-outputs#sending-data-to-a-parent-component -->
+  <app-child
+    [childMessage]="parentMessage"
+    (messageEventChild)="receiveMessageParent($event)"
+  ></app-child>
+
+  <p>Message from child: {{ receivedMessage }}</p>
+</div>
+
+<div>
+  <app-card *ngFor="let item of items" [appCardItems]="items"></app-card>
+</div>
