@@ -14,7 +14,7 @@ export class WebsocketService {
 
     this.socket.onopen = (event) => {
       console.log('connection open!');
-      this.socket.send('WebSopcket connection opened');
+      this.socket.send('WebSocket connection opened');
     };
 
     this.socket.onclose = (event) => {

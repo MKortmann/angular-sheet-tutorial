@@ -29,6 +29,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { CounterEffects } from './ngrx/counter.effects';
 import { ParentViewChildComponent } from './parent-view-child/parent-view-child.component';
 import { MapAndpipeComponent } from './map-andpipe/map-andpipe.component';
+import { RxjsExampleComponent } from './rxjs-example-component/rxjs-example-component.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { MapAndpipeComponent } from './map-andpipe/map-andpipe.component';
     CounterOnlyWithServiceComponent,
     ParentViewChildComponent,
     MapAndpipeComponent,
+    RxjsExampleComponent,
   ],
   imports: [
     BrowserModule,

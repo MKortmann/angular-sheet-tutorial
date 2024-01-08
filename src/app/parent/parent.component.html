@@ -1,4 +1,8 @@
 <div class="container">
+  <!-- {{}} -> from ts to html -->
+  <!-- [] -> from ts to html -->
+  <!-- () -> from html to ts-->
+
   <!-- interpolation {{}} example:  -->
   <!-- Double curly braces are used in the template to display data from the template's component class -->
 
@@ -12,10 +16,8 @@
   <!-- if -->
   <div *ngIf="flag">Flag is {{ flag }}</div>
 
-
-
   <!-- loop 01 -->
-  <br/>
+  <br />
   <p *ngFor="let item of array">{{ item }}</p>
 
   <!-- loop with unordered list  -->
@@ -25,7 +27,6 @@
     </ul>
   </div>
 
-
   <br />
 
   <!-- https://angular.io/guide/built-in-directives -->
@@ -33,20 +34,25 @@
   <div [ngStyle]="{ color: flag ? 'red' : 'blue' }">text color</div>
 
   <!-- NgClass: Adds and removes a set of CSS classes -->
-  <!-- brackets: as input: binding property from component.ts to template.html -->
-  <div [ngClass]="{ cssClassStyle: flag, cssClassNoStyle: !flag }">text color class!!!</div>
+  <!-- brackets []: as input: binding property from component.ts to template.html -->
+  <div [ngClass]="{ cssClassStyle: flag, cssClassNoStyle: !flag }">
+    text color class!!!
+  </div>
 
   <!-- NgModel: adds two-way data binding to an HTML from element -->
   <!-- [(brackets and parentheses)]: binding data in both ways component.ts <=> template.html -->
   <input [(ngModel)]="userInput" placeholder="Enter text here" />
   <p>You entered: {{ userInput }}</p>
 
-  <!-- parentheses as output/event -->
+  <!-- parentheses as output/event -> event from html to ts-->
   <!-- event binding: click -->
   <button class="btn btn-primary" (click)="handleClick()">Click</button>
   <p>Number: {{ number }}</p>
 
   <!-- Use from Pipes -->
+  <!-- If you are using Angular 17, you have to import it in your standalone component:
+  import { CommonModule } from '@angular/common'
+  -->
   <p>{{ title | uppercase }}</p>
   <p>{{ currentDate }}</p>
   <p>{{ currentDate | date: 'dd/MM/yyyy' }}</p>
@@ -66,5 +72,6 @@
 </div>
 
 <div>
-  <app-card *ngFor="let item of items" [appCardItems]="items"></app-card>
+  <!-- Using Input Decorator at the app-card -->
+  <app-card [appCardItems]="items"></app-card>
 </div>

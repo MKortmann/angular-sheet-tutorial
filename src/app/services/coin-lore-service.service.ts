@@ -16,6 +16,11 @@ export class CoinLoreServiceService {
     return this.http.get<[]>(this.url);
   }
 
+  // Another way to do the method above without using rxjs
+  // getGlobalData(): Promise<[]> {
+  //   return this.http.get<[]>(this.url).toPromise();
+  // }
+
   getCoins(): Observable<[]> {
     return this.http.get<any>(this.urlCoins);
   }

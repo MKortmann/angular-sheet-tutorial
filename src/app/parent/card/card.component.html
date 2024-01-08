@@ -1,7 +1,8 @@
 <p>card works!</p>
 
 <ul>
-  <li *ngFor="let item of appCardItems">
+  <!-- using slice pipe to limit the iteration -->
+  <li *ngFor="let item of appCardItems | slice: 0 : 5">
     <h1>{{ item.title }}</h1>
     <p>{{ item.id }}</p>
   </li>

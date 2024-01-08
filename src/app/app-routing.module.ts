@@ -10,6 +10,7 @@ import { CounterComponent } from './counter/counter.component';
 import { CounterOnlyWithServiceComponent } from './counter-only-with-service/counter-only-with-service.component';
 import { ParentViewChildComponent } from './parent-view-child/parent-view-child.component';
 import { MapAndpipeComponent } from './map-andpipe/map-andpipe.component';
+import { RxjsExampleComponent } from './rxjs-example-component/rxjs-example-component.component';
 
 const routes: Routes = [
   { path: '', component: ParentComponent },
@@ -24,6 +25,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'wiki', component: WikiComponent },
   { path: 'parent-view-child', component: ParentViewChildComponent },
+  { path: 'parent-view-child', component: ParentViewChildComponent },
+  { path: 'rxjs', component: RxjsExampleComponent },
   { path: '**', component: NotfoundComponent },
 ];
 
